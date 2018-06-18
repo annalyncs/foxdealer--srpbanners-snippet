@@ -1,0 +1,28 @@
+{{#define $srpBannerFormPopup}}
+<div class="banner-list">
+    {{#each menus.srpbanners}}
+    {{#if url_match}}
+    <div class="banner-left">
+        <a href="#" onClick="ga('send', 'event', 'srp-banner', 'click', '{{image.url}}');"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="{{image.url}}" alt="{{label}}"></a>
+    </div>
+    <style>
+        /* hide default banner if url match */
+
+        .banner-default {
+            display: none;
+        }
+
+    </style>
+    {{/if}}
+    {{/each}}
+
+    {{#each menus.srpbanners}}
+    {{#if default}}
+
+    <div class="banner-left banner-default">
+        <a href="#" onClick="ga('send', 'event', 'srp-banner', 'click', '{{image.url}}');"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="{{image.url}}" alt="{{label}}"></a>
+    </div>
+
+    {{/if}}
+    {{/each}}
+{{/define}}
